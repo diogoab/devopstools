@@ -1,5 +1,13 @@
 ## Instalando Docker e ativando o cluster swarm
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
 Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
 ```console
