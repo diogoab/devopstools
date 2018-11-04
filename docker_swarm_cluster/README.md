@@ -96,7 +96,7 @@ Configurar o Manager
 
 
 /home/cluster_docker/main.yml
-
+´´´
 ---
  - name: Configurando Managers
    hosts: docker_swarm_manager
@@ -111,5 +111,5 @@ Configurar o Manager
     - docker
     - worker
 
-
+´´´
  ansible-playbook -i hosts main.yml
