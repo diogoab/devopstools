@@ -14,9 +14,7 @@ sudo apt-get install ansible
 
 ```
 [docker_swarm_manager]
-MANAGER1 ansible_ssh_host=10.10.10.2 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=ExemploPost
-MANAGER2 ansible_ssh_host=10.10.10.3 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=ExemploPost
-MANAGER3 ansible_ssh_host=10.10.10.4 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_private_key_file=keys/key_master.pem
+MANAGER1 ansible_ssh_host=10.10.10.4 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_private_key_file=keys/key_master.pem
 [docker_swarm_worker]
 WORKER1 ansible_ssh_host=10.10.10.5 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=ExemploPost
 ```
