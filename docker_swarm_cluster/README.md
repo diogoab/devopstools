@@ -131,4 +131,6 @@ Playbook principal
 ```
 
 Instalação do Cluster
- **ansible-playbook -i hosts main.yml**
+```
+ ansible-playbook -i hosts main.yml
+```
