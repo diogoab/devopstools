@@ -19,9 +19,9 @@ $ touch /home/cluster_docker/hosts; touch /home/cluster_docker/main.yml
 
 ```
 [docker_swarm_manager]
-MANAGER1 ansible_ssh_host=10.10.10.4 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_private_key_file=keys/key_master.pem
+MANAGER1 ansible_ssh_host=10.0.0.4 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_private_key_file=keys/key_master.pem
 [docker_swarm_worker]
-WORKER1 ansible_ssh_host=10.10.10.5 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=yourpass
+WORKER1 ansible_ssh_host=10.0.0.5 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=yourpass
 ```
  
  >/home/cluster_docker/roles/docker/tasks/main.yml:
@@ -102,7 +102,7 @@ Configurar o Manager
 >/home/cluster_docker/group_vars/all
 ```
 ---
-  docker_swarm_manager_ip: "10.10.10.2"
+  docker_swarm_manager_ip: "10.0.0.2"
   docker_swarm_manager_port: "2377"
 ```
 
