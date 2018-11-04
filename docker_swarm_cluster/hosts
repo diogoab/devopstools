@@ -4,7 +4,7 @@ MANAGER1 ansible_ssh_host=10.142.0.7 ansible_ssh_port=22 ansible_ssh_user=diogo 
 #MANAGER3 ansible_ssh_host=10.10.10.4 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_private_key_file=keys/id_rsa.pem
 [docker_swarm_worker]
 WORKER1 ansible_ssh_host=10.142.0.8 ansible_ssh_port=22 ansible_ssh_user=diogo ansible_ssh_private_key_file=keys/id_rsa.pem
-[MANAGER1:VARS]
+[docker_swarm_manager:vars]
 ansible_python_interpreter=/usr/bin/python3
-[WORKER1:VARS]
+[docker_swarm_worker:vars]
 ansible_python_interpreter=/usr/bin/python3
