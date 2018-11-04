@@ -1,18 +1,5 @@
 ## Instalando Docker e ativando o cluster swarm
 
-```mermaid
-graph LR
-A[MANAGER1] --> B((WORKER1))
-A --> C((WORKER2))
-```
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-
 Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
 ```console
