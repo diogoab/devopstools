@@ -2,7 +2,6 @@
 
 ```mermaid
 graph LR
-
 A[MANAGER1] --> B((WORKER1))
 A --> C((WORKER2))
 ```
