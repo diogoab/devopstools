@@ -5,9 +5,9 @@ sudo apt-get update
 sudo apt-get install ansible
 
 ```console
-mkdir -p /home/cluster_docker/roles; mkdir /home/cluster_docker/group_vars
-cd /home/cluster_docker
-touch /home/cluster_docker/hosts; touch /home/cluster_docker/main.yml
+# mkdir -p /home/cluster_docker/roles; mkdir /home/cluster_docker/group_vars
+# cd /home/cluster_docker
+# touch /home/cluster_docker/hosts; touch /home/cluster_docker/main.yml
 ```
 
 ## vim /home/cluster_docker/hosts
