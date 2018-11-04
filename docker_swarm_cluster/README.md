@@ -1,7 +1,5 @@
 ## Instalando Docker e ativando o cluster swarm
 
-[![Build Status](https://github.com/diogoab/devopstools/graphs/contributors)]
-
 Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
 ```console
