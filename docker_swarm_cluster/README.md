@@ -1,5 +1,9 @@
 ## Instalando Docker e ativando o cluster swarm
 
+```mermaid
+A[MANAGER1] --> B((WORKER1))
+A --> C((WORKER2))
+
 Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
 ```console
