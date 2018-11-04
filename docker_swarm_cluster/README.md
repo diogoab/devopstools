@@ -96,6 +96,7 @@ Configurar o Manager
 
 
 /home/cluster_docker/main.yml
+
 ´´´
 ---
  - name: Configurando Managers
