@@ -14,7 +14,7 @@ $ mkdir -p /home/cluster_docker/roles; mkdir /home/cluster_docker/group_vars
 $ cd /home/cluster_docker
 $ touch /home/cluster_docker/hosts; touch /home/cluster_docker/main.yml
 ```
-
+Configurar os servidores que receberão as instalações, podendo usar uma key para autenticar ou sua senha.
 >vim /home/cluster_docker/hosts
 
 ```
@@ -23,6 +23,8 @@ MANAGER1 ansible_ssh_host=10.0.0.4 ansible_ssh_port=22 ansible_ssh_user=root ans
 [docker_swarm_worker]
 WORKER1 ansible_ssh_host=10.0.0.5 ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_pass=yourpass
 ```
+
+Instalação do Docker
  
  >/home/cluster_docker/roles/docker/tasks/main.yml:
 
@@ -46,7 +48,7 @@ WORKER1 ansible_ssh_host=10.0.0.5 ansible_ssh_port=22 ansible_ssh_user=root ansi
 ```
 
 
-Configurar o Manager
+Configuração do Manager
 >/home/cluster_docker/roles/manager/tasks/main.yml:
 
 ```
@@ -76,6 +78,7 @@ Configurar o Manager
      and inventory_hostname != groups['docker_swarm_manager'][0]"
 ```
 
+Configuração do Worker
 >/home/cluster_docker/roles/worker/tasks/main.yml:
 
 ```
@@ -99,6 +102,7 @@ Configurar o Manager
            and docker_info.stdout.find('Swarm: pending') == -1"
 ```
 
+Configuração do Manager
 >/home/cluster_docker/group_vars/all
 ```
 ---
@@ -106,6 +110,7 @@ Configurar o Manager
   docker_swarm_manager_port: "2377"
 ```
 
+Playbook principal
 >/home/cluster_docker/main.yml
 
 ```
@@ -124,4 +129,6 @@ Configurar o Manager
     - worker
 
 ```
+
+Instalação do Cluster
  **ansible-playbook -i hosts main.yml**
