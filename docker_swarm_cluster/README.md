@@ -1,4 +1,4 @@
-Atualizar o sistema
+Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
 ```console
 $ sudo apt-get update
