@@ -10,7 +10,7 @@ sudo apt-get install ansible
 # touch /home/cluster_docker/hosts; touch /home/cluster_docker/main.yml
 ```
 
-## vim /home/cluster_docker/hosts
+>vim /home/cluster_docker/hosts
 
 ```
 [docker_swarm_manager]
