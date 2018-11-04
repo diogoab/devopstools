@@ -1,0 +1,8 @@
+---
+- hosts: database
+  become: true
+  tasks:
+    - name: "Instalacao do MYSQL SERVER via APT"
+      apt: name=mysql-server state=present update_cache=yes
+    - name: "MySQL started"
+      service: name=mysql state=started enabled=yes

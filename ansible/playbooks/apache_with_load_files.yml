@@ -1,0 +1,30 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+    - name: "Instalacao do Apache2 e componentes adicionais"
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - apache2
+        - libapache2-mod-wsgi
+        - python-pip
+        - python-virtualenv
+ 
+    - name: "Garantir que o Apache seja iniciado"
+      service: name=apache2 state=started enabled=yes
+ 
+    - name: "habilitar o modulo mod_wsgi"
+      apache2_module: state=present name=wsgi
+      notify: restart apache2
+ 
+    - name: "Copia de arquivos de um diretorio local para o servidor remoto"
+      copy: src=/STORAGE/APACHE/demo/app/ dest=/var/www/demo mode=0755
+      notify: restart apache2
+ 
+    - name: "Copia do demo.conf para o servidor remoto"
+      copy: src=/STORAGE/APACHE/demo/demo.conf dest=/etc/apache2/sites-available mode=0755
+      notify: restart apache2
+ 
+  handlers:
+    - name: "restart apache2"
+      service: name=apache2 state=restarted

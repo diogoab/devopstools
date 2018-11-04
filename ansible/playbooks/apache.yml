@@ -1,0 +1,21 @@
+---
+- hosts: webserver
+  become: true
+  tasks:
+    - name: Instalacao do apache2 e componetes adicionais
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+        - apache2
+        - libapache2-mod-wsgi
+        - python-pip
+        - python-virtualenv
+
+    - name: Garantir que o Apache seja iniciado
+      service: name=apache2 state=started enabled=yes
+
+    - name: habilitar o modulo mod_wsgi
+      apache2_module: state=present name=wsgi
+      notify: restart apache2
+  handlers:
+    - name: restart apache2
+      service: name=apache2 state=restarted
