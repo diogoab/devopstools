@@ -1,12 +1,6 @@
 ## Instalando Docker e ativando o cluster swarm
 
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
+[![Build Status](https://github.com/diogoab/devopstools/graphs/contributors)](https://travis-ci.org/knsv/mermaid)
 
 Atualizar o sistema e instalar o Ansible com os seguintes comandos:
 
